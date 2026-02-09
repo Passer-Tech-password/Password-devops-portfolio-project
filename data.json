@@ -1,0 +1,80 @@
+{
+  "profile": {
+    "name": "Clement Simeon",
+    "role": "DevOps | SRE | Cloud Engineer",
+    "email": "clement@example.com",
+    "location": "Lagos, Nigeria",
+    "avatar": "/avatar.png",
+    "cvLink": "#",
+    "social": {
+      "facebook": "#",
+      "twitter": "#",
+      "linkedin": "#",
+      "github": "#"
+    }
+  },
+  "resume": {
+    "experience": [
+      {
+        "id": "1",
+        "role": "DevOps Engineer",
+        "company": "Tech Solutions",
+        "period": "2022 — Present",
+        "description": "Managed cloud infrastructure on AWS, implemented CI/CD pipelines using Jenkins, and automated deployment processes with Terraform and Ansible."
+      },
+      {
+        "id": "2",
+        "role": "Cloud Support Engineer",
+        "company": "Cloud Corp",
+        "period": "2020 — 2022",
+        "description": "Provided technical support for Google Cloud Platform services, troubleshooting issues related to Compute Engine, Kubernetes Engine, and networking."
+      }
+    ],
+    "education": [
+      {
+        "id": "1",
+        "degree": "Bachelor of Science in Computer Science",
+        "school": "University of Technology",
+        "period": "2016 — 2020",
+        "description": "Graduated with honors."
+      },
+      {
+        "id": "2",
+        "degree": "AWS Certified Cloud Practitioner",
+        "school": "Certification",
+        "period": "2021",
+        "description": "AWS Certified Cloud Practitioner & Google Cloud Associate Cloud Engineer."
+      }
+    ],
+    "skills": [
+      { "id": "1", "name": "DevOps (Jenkins, Docker, K8s)", "level": 90 },
+      { "id": "2", "name": "Cloud (AWS, GCP)", "level": 85 }
+    ]
+  },
+  "projects": [
+    {
+      "id": "1",
+      "title": "Cloud Infrastructure Automation",
+      "category": "DevOps",
+      "image": "/project-1.jpg",
+      "link": "#"
+    },
+    {
+      "id": "2",
+      "title": "Kubernetes Cluster Management",
+      "category": "SRE",
+      "image": "/project-2.jpg",
+      "link": "#"
+    }
+  ],
+  "blog": [
+    {
+      "id": "1",
+      "title": "Getting Started with Kubernetes",
+      "category": "DevOps",
+      "date": "Oct 12, 2023",
+      "excerpt": "A comprehensive guide to setting up your first K8s cluster...",
+      "slug": "getting-started-kubernetes"
+    }
+  ]
+}

@@ -1,6 +1,10 @@
 import { Book, Briefcase, GraduationCap } from "lucide-react";
+import { getPortfolioData } from "@/lib/data";
 
-export default function Resume() {
+export default async function Resume() {
+  const data = await getPortfolioData();
+  const { resume } = data;
+
   return (
     <div className="space-y-8">
       <header>
@@ -21,25 +25,16 @@ export default function Resume() {
           </div>
 
           <div className="space-y-8 border-l border-[#383838] ml-4 pl-8 relative">
-            {/* Experience Item 1 */}
-            <div className="relative">
-              <span className="absolute -left-[37px] top-1 h-4 w-4 rounded-full bg-blue-500 shadow-[0_0_0_4px_#1e1e1f]"></span>
-              <h4 className="text-lg font-bold text-white mb-1">DevOps Engineer</h4>
-              <span className="text-blue-400 text-sm mb-2 block">2022 — Present</span>
-              <p className="text-gray-400 text-sm leading-relaxed">
-                Managed cloud infrastructure on AWS, implemented CI/CD pipelines using Jenkins, and automated deployment processes with Terraform and Ansible.
-              </p>
-            </div>
-
-            {/* Experience Item 2 */}
-            <div className="relative">
-              <span className="absolute -left-[37px] top-1 h-4 w-4 rounded-full bg-[#2b2b2c] shadow-[0_0_0_4px_#1e1e1f]"></span>
-              <h4 className="text-lg font-bold text-white mb-1">Cloud Support Engineer</h4>
-              <span className="text-blue-400 text-sm mb-2 block">2020 — 2022</span>
-              <p className="text-gray-400 text-sm leading-relaxed">
-                Provided technical support for Google Cloud Platform services, troubleshooting issues related to Compute Engine, Kubernetes Engine, and networking.
-              </p>
-            </div>
+            {resume.experience.map((item, index) => (
+              <div className="relative" key={item.id}>
+                <span className={`absolute -left-[37px] top-1 h-4 w-4 rounded-full shadow-[0_0_0_4px_#1e1e1f] ${index === 0 ? 'bg-blue-500' : 'bg-[#2b2b2c]'}`}></span>
+                <h4 className="text-lg font-bold text-white mb-1">{item.role}</h4>
+                <span className="text-blue-400 text-sm mb-2 block">{item.period}</span>
+                <p className="text-gray-400 text-sm leading-relaxed">
+                  {item.description}
+                </p>
+              </div>
+            ))}
           </div>
         </section>
 
@@ -53,25 +48,16 @@ export default function Resume() {
           </div>
 
           <div className="space-y-8 border-l border-[#383838] ml-4 pl-8 relative">
-            {/* Education Item 1 */}
-            <div className="relative">
-              <span className="absolute -left-[37px] top-1 h-4 w-4 rounded-full bg-blue-500 shadow-[0_0_0_4px_#1e1e1f]"></span>
-              <h4 className="text-lg font-bold text-white mb-1">University of Technology</h4>
-              <span className="text-blue-400 text-sm mb-2 block">2016 — 2020</span>
-              <p className="text-gray-400 text-sm leading-relaxed">
-                Bachelor of Science in Computer Science. Graduated with honors.
-              </p>
-            </div>
-            
-             {/* Education Item 2 */}
-             <div className="relative">
-              <span className="absolute -left-[37px] top-1 h-4 w-4 rounded-full bg-[#2b2b2c] shadow-[0_0_0_4px_#1e1e1f]"></span>
-              <h4 className="text-lg font-bold text-white mb-1">Certification</h4>
-              <span className="text-blue-400 text-sm mb-2 block">2021</span>
-              <p className="text-gray-400 text-sm leading-relaxed">
-                AWS Certified Cloud Practitioner & Google Cloud Associate Cloud Engineer.
-              </p>
-            </div>
+            {resume.education.map((item, index) => (
+              <div className="relative" key={item.id}>
+                <span className={`absolute -left-[37px] top-1 h-4 w-4 rounded-full shadow-[0_0_0_4px_#1e1e1f] ${index === 0 ? 'bg-blue-500' : 'bg-[#2b2b2c]'}`}></span>
+                <h4 className="text-lg font-bold text-white mb-1">{item.school}</h4>
+                <span className="text-blue-400 text-sm mb-2 block">{item.period}</span>
+                <p className="text-gray-400 text-sm leading-relaxed">
+                  {item.description}
+                </p>
+              </div>
+            ))}
           </div>
         </section>
       </div>
@@ -81,51 +67,17 @@ export default function Resume() {
           <h3 className="text-xl font-bold text-white mb-6">My Skills</h3>
           <div className="bg-[#212123] border border-[#383838] p-6 rounded-2xl">
              <div className="space-y-4">
-                
-                {/* Skill Item */}
-                <div>
-                    <div className="flex justify-between mb-1">
-                        <span className="text-white font-medium">DevOps (Jenkins, Docker, K8s)</span>
-                        <span className="text-gray-400">90%</span>
-                    </div>
-                    <div className="w-full bg-[#383838] rounded-full h-2">
-                        <div className="bg-blue-500 h-2 rounded-full" style={{ width: '90%' }}></div>
-                    </div>
-                </div>
-
-                {/* Skill Item */}
-                <div>
-                    <div className="flex justify-between mb-1">
-                        <span className="text-white font-medium">Cloud (AWS, GCP)</span>
-                        <span className="text-gray-400">85%</span>
-                    </div>
-                    <div className="w-full bg-[#383838] rounded-full h-2">
-                        <div className="bg-blue-500 h-2 rounded-full" style={{ width: '85%' }}></div>
-                    </div>
-                </div>
-
-                {/* Skill Item */}
-                <div>
-                    <div className="flex justify-between mb-1">
-                        <span className="text-white font-medium">IaC (Terraform, Ansible)</span>
-                        <span className="text-gray-400">80%</span>
-                    </div>
-                    <div className="w-full bg-[#383838] rounded-full h-2">
-                        <div className="bg-blue-500 h-2 rounded-full" style={{ width: '80%' }}></div>
-                    </div>
-                </div>
-
-                 {/* Skill Item */}
-                 <div>
-                    <div className="flex justify-between mb-1">
-                        <span className="text-white font-medium">Monitoring (Prometheus, Grafana)</span>
-                        <span className="text-gray-400">75%</span>
-                    </div>
-                    <div className="w-full bg-[#383838] rounded-full h-2">
-                        <div className="bg-blue-500 h-2 rounded-full" style={{ width: '75%' }}></div>
-                    </div>
-                </div>
-
+                {resume.skills.map((skill) => (
+                  <div key={skill.id}>
+                      <div className="flex justify-between mb-1">
+                          <span className="text-white font-medium">{skill.name}</span>
+                          <span className="text-gray-400">{skill.level}%</span>
+                      </div>
+                      <div className="w-full bg-[#383838] rounded-full h-2">
+                          <div className="bg-blue-500 h-2 rounded-full" style={{ width: `${skill.level}%` }}></div>
+                      </div>
+                  </div>
+                ))}
              </div>
           </div>
       </section>

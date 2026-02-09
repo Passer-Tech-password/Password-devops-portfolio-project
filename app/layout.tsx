@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Sidebar from "@/components/Sidebar";
 import ProfileHeader from "@/components/ProfileHeader";
+import { getPortfolioData } from "@/lib/data";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -19,11 +20,13 @@ export const metadata: Metadata = {
   description: "Portfolio of Clement Simeon",
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const data = await getPortfolioData();
+
   return (
     <html lang="en">
       <body
@@ -32,7 +35,7 @@ export default function RootLayout({
         <div className="w-full max-w-7xl flex flex-col lg:flex-row gap-6">
             <Sidebar />
             <div className="flex-1 flex flex-col min-w-0">
-                <ProfileHeader />
+                <ProfileHeader profile={data.profile} />
                 <main className="bg-[#1e1e1f] border border-[#383838] rounded-3xl p-6 md:p-8 relative shadow-lg min-h-[500px]">
                     {children}
                 </main>

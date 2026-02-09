@@ -1,0 +1,119 @@
+{
+  "profile": {
+    "name": "Clement Simeon",
+    "role": "DevOps | SRE | Cloud Engineer",
+    "email": "clement@example.com",
+    "location": "Lagos, Nigeria",
+    "cvLink": "#",
+    "social": {
+      "facebook": "#",
+      "twitter": "#",
+      "linkedin": "#",
+      "github": "#"
+    }
+  },
+  "resume": {
+    "experience": [
+      {
+        "id": "1",
+        "role": "DevOps Engineer",
+        "company": "",
+        "period": "2022 — Present",
+        "description": "Managed cloud infrastructure on AWS, implemented CI/CD pipelines using Jenkins, and automated deployment processes with Terraform and Ansible."
+      },
+      {
+        "id": "2",
+        "role": "Cloud Support Engineer",
+        "company": "",
+        "period": "2020 — 2022",
+        "description": "Provided technical support for Google Cloud Platform services, troubleshooting issues related to Compute Engine, Kubernetes Engine, and networking."
+      }
+    ],
+    "education": [
+      {
+        "id": "1",
+        "school": "University of Technology",
+        "degree": "Bachelor of Science in Computer Science",
+        "period": "2016 — 2020",
+        "description": "Graduated with honors."
+      },
+      {
+        "id": "2",
+        "school": "Certification",
+        "degree": "AWS & GCP Certifications",
+        "period": "2021",
+        "description": "AWS Certified Cloud Practitioner & Google Cloud Associate Cloud Engineer."
+      }
+    ],
+    "skills": [
+      { "id": "1", "name": "DevOps (Jenkins, Docker, K8s)", "level": 90 },
+      { "id": "2", "name": "Cloud (AWS, GCP)", "level": 85 },
+      { "id": "3", "name": "IaC (Terraform, Ansible)", "level": 80 },
+      { "id": "4", "name": "Scripting (Python, Bash)", "level": 85 }
+    ]
+  },
+  "projects": [
+    {
+      "id": "1",
+      "title": "Cloud Infrastructure Automation",
+      "category": "DevOps",
+      "image": "/project-1.jpg",
+      "link": "#"
+    },
+    {
+      "id": "2",
+      "title": "Kubernetes Cluster Management",
+      "category": "SRE",
+      "image": "/project-2.jpg",
+      "link": "#"
+    },
+    {
+      "id": "3",
+      "title": "CI/CD Pipeline Optimization",
+      "category": "DevOps",
+      "image": "/project-3.jpg",
+      "link": "#"
+    },
+    {
+      "id": "4",
+      "title": "Serverless Application",
+      "category": "Cloud Engineering",
+      "image": "/project-4.jpg",
+      "link": "#"
+    },
+    {
+      "id": "5",
+      "title": "Monitoring Dashboard",
+      "category": "SRE",
+      "image": "/project-5.jpg",
+      "link": "#"
+    },
+    {
+      "id": "6",
+      "title": "E-commerce Platform",
+      "category": "Web Development",
+      "image": "/project-6.jpg",
+      "link": "#"
+    }
+  ],
+  "blogs": [
+    {
+        "id": "1",
+        "title": "Introduction to DevOps",
+        "category": "DevOps",
+        "date": "Oct 10, 2023",
+        "excerpt": "A comprehensive guide to understanding DevOps principles and practices.",
+        "image": "/blog-1.jpg",
+        "link": "#"
+    },
+    {
+        "id": "2",
+        "title": "Mastering Kubernetes",
+        "category": "Containerization",
+        "date": "Nov 15, 2023",
+        "excerpt": "Deep dive into Kubernetes architecture and orchestration.",
+        "image": "/blog-2.jpg",
+        "link": "#"
+    }
+  ]
+}

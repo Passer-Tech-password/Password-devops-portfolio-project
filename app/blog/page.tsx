@@ -1,37 +1,10 @@
 import Link from "next/link";
+import { getPortfolioData } from "@/lib/data";
 
-const blogPosts = [
-  {
-    title: "Understanding Kubernetes Pod Lifecycle",
-    category: "DevOps",
-    date: "Feb 09, 2026",
-    excerpt: "A deep dive into how Kubernetes manages pod lifecycles and how to handle termination gracefully.",
-    slug: "kubernetes-pod-lifecycle",
-  },
-  {
-    title: "Best Practices for Terraform State Management",
-    category: "Cloud",
-    date: "Jan 25, 2026",
-    excerpt: "Learn how to securely manage your Terraform state files in a team environment using remote backends.",
-    slug: "terraform-state-management",
-  },
-  {
-    title: "Setting up Prometheus and Grafana for Monitoring",
-    category: "SRE",
-    date: "Jan 10, 2026",
-    excerpt: "A step-by-step guide to setting up a robust monitoring stack for your microservices architecture.",
-    slug: "prometheus-grafana-setup",
-  },
-  {
-    title: "CI/CD Pipelines with Jenkins and Docker",
-    category: "DevOps",
-    date: "Dec 15, 2025",
-    excerpt: "Automating the build and deployment process of containerized applications using Jenkins pipelines.",
-    slug: "cicd-jenkins-docker",
-  },
-];
+export default async function Blog() {
+  const data = await getPortfolioData();
+  const blogPosts = data.blog;
 
-export default function Blog() {
   return (
     <div className="space-y-8">
       <header>
@@ -42,8 +15,8 @@ export default function Blog() {
       </header>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-        {blogPosts.map((post, index) => (
-          <Link href={`/blog/${post.slug}`} key={index} className="block group">
+        {blogPosts.map((post) => (
+          <Link href={`#`} key={post.id} className="block group">
             <div className="bg-[#212123] border border-[#383838] rounded-2xl overflow-hidden hover:shadow-lg transition-all duration-300 hover:border-blue-500/50 h-full flex flex-col">
               <div className="aspect-video bg-[#2b2b2c] relative">
                  {/* Placeholder Image */}
