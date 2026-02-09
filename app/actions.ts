@@ -78,6 +78,19 @@ export async function saveProjects(data: any) {
     return { success: false };
 }
 
+export async function saveCertifications(data: any) {
+    const currentData = await getPortfolioData();
+    currentData.certifications = data;
+    const success = await updatePortfolioData(currentData);
+    
+    if (success) {
+        revalidatePath('/portfolio');
+        revalidatePath('/admin');
+        return { success: true };
+    }
+    return { success: false };
+}
+
 export async function saveBlog(data: any) {
     const currentData = await getPortfolioData();
     currentData.blog = data;

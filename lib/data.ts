@@ -46,6 +46,14 @@ export interface PortfolioData {
     image: string;
     link: string;
   }>;
+  certifications: Array<{
+    id: string;
+    title: string;
+    issuer: string;
+    date: string;
+    image: string;
+    link: string;
+  }>;
   blog: Array<{
     id: string;
     title: string;
@@ -67,6 +75,7 @@ export async function getPortfolioData(): Promise<PortfolioData> {
       profile: { name: "", role: "", email: "", location: "", avatar: "", cvLink: "", social: { facebook: "", twitter: "", linkedin: "", github: "" } },
       resume: { experience: [], education: [], skills: [] },
       projects: [],
+      certifications: [],
       blog: []
     };
   }

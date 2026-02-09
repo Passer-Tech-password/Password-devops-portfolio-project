@@ -4,11 +4,11 @@ import { useState } from 'react';
 import { PortfolioData } from '@/lib/data';
 import ProfileForm from './components/ProfileForm';
 import JsonEditorForm from './components/JsonEditorForm';
-import { saveResume, saveProjects, saveBlog, logout } from '@/app/actions';
-import { LogOut, User, FileText, Briefcase, BookOpen } from 'lucide-react';
+import { saveResume, saveProjects, saveCertifications, saveBlog, logout } from '@/app/actions';
+import { LogOut, User, FileText, Briefcase, BookOpen, Award } from 'lucide-react';
 
 export default function AdminDashboard({ data }: { data: PortfolioData }) {
-  const [activeTab, setActiveTab] = useState<'profile' | 'resume' | 'projects' | 'blog'>('profile');
+  const [activeTab, setActiveTab] = useState<'profile' | 'resume' | 'projects' | 'certifications' | 'blog'>('profile');
 
   return (
     <div className="min-h-screen bg-[#1e1e1f] text-white font-sans">
@@ -54,6 +54,13 @@ export default function AdminDashboard({ data }: { data: PortfolioData }) {
                   Portfolio Projects
                 </button>
                 <button 
+                  onClick={() => setActiveTab('certifications')}
+                  className={`w-full flex items-center gap-3 px-4 py-3 rounded-xl transition-all ${activeTab === 'certifications' ? 'bg-blue-600 text-white shadow-lg' : 'text-gray-400 hover:bg-[#383838] hover:text-white'}`}
+                >
+                  <Award size={18} />
+                  Certifications
+                </button>
+                <button 
                   onClick={() => setActiveTab('blog')}
                   className={`w-full flex items-center gap-3 px-4 py-3 rounded-xl transition-all ${activeTab === 'blog' ? 'bg-blue-600 text-white shadow-lg' : 'text-gray-400 hover:bg-[#383838] hover:text-white'}`}
                 >
@@ -88,6 +95,16 @@ export default function AdminDashboard({ data }: { data: PortfolioData }) {
                     title="Portfolio Projects" 
                     data={data.projects} 
                     action={saveProjects} 
+                  />
+               </div>
+            )}
+
+            {activeTab === 'certifications' && (
+               <div className="animate-in fade-in slide-in-from-bottom-4 duration-500">
+                  <JsonEditorForm 
+                    title="Certifications" 
+                    data={data.certifications} 
+                    action={saveCertifications} 
                   />
                </div>
             )}
