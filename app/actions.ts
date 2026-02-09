@@ -8,7 +8,7 @@ import { redirect } from 'next/navigation';
 export async function login(formData: FormData) {
   const password = formData.get('password') as string;
   // Simple hardcoded password for demonstration
-  if (password === 'admin123') {
+  if (password === 'Password@2026') {
     (await cookies()).set('admin_session', 'true', { httpOnly: true });
     redirect('/admin');
   } else {
