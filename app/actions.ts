@@ -41,65 +41,65 @@ export async function updateProfile(prevState: any, formData: FormData) {
   };
 
   currentData.profile = newProfile;
-  const success = await updatePortfolioData(currentData);
+  const result = await updatePortfolioData(currentData);
 
-  if (success) {
+  if (result.success) {
     revalidatePath('/');
     revalidatePath('/admin');
     return { message: 'Profile updated successfully!', success: true };
   } else {
-    return { message: 'Failed to update profile.', success: false };
+    return { message: `Failed to update profile: ${result.error}`, success: false };
   }
 }
 
 export async function saveResume(data: any) {
     const currentData = await getPortfolioData();
     currentData.resume = data;
-    const success = await updatePortfolioData(currentData);
+    const result = await updatePortfolioData(currentData);
     
-    if (success) {
+    if (result.success) {
         revalidatePath('/resume');
         revalidatePath('/admin');
         return { success: true };
     }
-    return { success: false };
+    return { success: false, error: result.error };
 }
 
 export async function saveProjects(data: any) {
     const currentData = await getPortfolioData();
     currentData.projects = data;
-    const success = await updatePortfolioData(currentData);
+    const result = await updatePortfolioData(currentData);
     
-    if (success) {
+    if (result.success) {
         revalidatePath('/portfolio');
         revalidatePath('/admin');
         return { success: true };
     }
-    return { success: false };
+    return { success: false, error: result.error };
 }
 
 export async function saveCertifications(data: any) {
     const currentData = await getPortfolioData();
     currentData.certifications = data;
-    const success = await updatePortfolioData(currentData);
+    const result = await updatePortfolioData(currentData);
     
-    if (success) {
+    if (result.success) {
         revalidatePath('/portfolio');
         revalidatePath('/admin');
         return { success: true };
     }
-    return { success: false };
+    return { success: false, error: result.error };
 }
 
 export async function saveBlog(data: any) {
     const currentData = await getPortfolioData();
     currentData.blog = data;
-    const success = await updatePortfolioData(currentData);
+    const result = await updatePortfolioData(currentData);
     
-    if (success) {
+    if (result.success) {
         revalidatePath('/blog');
         revalidatePath('/admin');
         return { success: true };
     }
-    return { success: false };
+    return { success: false, error: result.error };
 }

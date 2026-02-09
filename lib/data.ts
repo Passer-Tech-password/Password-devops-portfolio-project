@@ -81,12 +81,12 @@ export async function getPortfolioData(): Promise<PortfolioData> {
   }
 }
 
-export async function updatePortfolioData(newData: PortfolioData): Promise<boolean> {
+export async function updatePortfolioData(newData: PortfolioData): Promise<{ success: boolean; error?: string }> {
   try {
     await fs.writeFile(DATA_FILE, JSON.stringify(newData, null, 2), 'utf-8');
-    return true;
+    return { success: true };
   } catch (error) {
     console.error("Error writing data file:", error);
-    return false;
+    return { success: false, error: String(error) };
   }
 }

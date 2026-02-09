@@ -47,8 +47,16 @@
       }
     ],
     "skills": [
-      { "id": "1", "name": "DevOps (Jenkins, Docker, K8s)", "level": 90 },
-      { "id": "2", "name": "Cloud (AWS, GCP)", "level": 85 }
+      {
+        "id": "1",
+        "name": "DevOps (Jenkins, Docker, K8s)",
+        "level": 90
+      },
+      {
+        "id": "2",
+        "name": "Cloud (AWS, GCP)",
+        "level": 85
+      }
     ]
   },
   "projects": [
