@@ -81,13 +81,34 @@ export async function getPortfolioData(): Promise<PortfolioData> {
   }
 }
 
+async function writeWithRetry(filePath: string, data: string, retries = 3, delay = 100): Promise<void> {
+  for (let i = 0; i < retries; i++) {
+    try {
+      await fs.writeFile(filePath, data, 'utf-8');
+      return;
+    } catch (error: any) {
+      if (i === retries - 1) throw error; // Throw on last attempt
+      
+      // If permission error or busy, wait and retry
+      if (error.code === 'EPERM' || error.code === 'EBUSY') {
+        console.warn(`Write failed (attempt ${i + 1}/${retries}), retrying...`, error.message);
+        await new Promise(resolve => setTimeout(resolve, delay));
+      } else {
+        throw error; // Throw immediately for other errors
+      }
+    }
+  }
+}
+
 export async function updatePortfolioData(newData: PortfolioData): Promise<{ success: boolean; error?: string }> {
   try {
     // Atomic write strategy: write to temp file then rename
     // This avoids file locking issues and partial writes
     const tempFile = `${DATA_FILE}.tmp-${Date.now()}`;
+    const dataString = JSON.stringify(newData, null, 2);
     
-    await fs.writeFile(tempFile, JSON.stringify(newData, null, 2), 'utf-8');
+    // Use retry logic for the initial write to temp file
+    await writeWithRetry(tempFile, dataString);
     
     // Rename/move (atomic operation on POSIX, usually safe on Windows if target exists)
     try {
@@ -95,8 +116,17 @@ export async function updatePortfolioData(newData: PortfolioData): Promise<{ suc
     } catch (renameError) {
         // Fallback for Windows if rename fails (sometimes due to permissions or locking)
         // Copy and delete is less atomic but works
-        await fs.copyFile(tempFile, DATA_FILE);
-        await fs.unlink(tempFile);
+        try {
+            await fs.copyFile(tempFile, DATA_FILE);
+            await fs.unlink(tempFile);
+        } catch (copyError) {
+            // If even copy fails, try to write directly to the target file with retry
+            // This is the "last resort" fallback
+            console.warn("Atomic rename/copy failed, falling back to direct write:", copyError);
+            await writeWithRetry(DATA_FILE, dataString);
+            // Try to clean up temp file, but don't fail if we can't
+            try { await fs.unlink(tempFile); } catch (e) {} 
+        }
     }
 
     return { success: true };
