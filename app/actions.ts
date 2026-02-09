@@ -22,33 +22,42 @@ export async function logout() {
 }
 
 export async function updateProfile(prevState: any, formData: FormData) {
-  const currentData = await getPortfolioData();
-  
-  const newProfile = {
-    ...currentData.profile,
-    name: formData.get('name') as string,
-    role: formData.get('role') as string,
-    email: formData.get('email') as string,
-    location: formData.get('location') as string,
-    avatar: formData.get('avatar') as string,
-    cvLink: formData.get('cvLink') as string,
-    social: {
-      facebook: formData.get('facebook') as string,
-      twitter: formData.get('twitter') as string,
-      linkedin: formData.get('linkedin') as string,
-      github: formData.get('github') as string,
-    }
-  };
+  try {
+      console.log('updateProfile called');
+      const currentData = await getPortfolioData();
+      
+      const newProfile = {
+        ...currentData.profile,
+        name: formData.get('name') as string,
+        role: formData.get('role') as string,
+        email: formData.get('email') as string,
+        location: formData.get('location') as string,
+        avatar: formData.get('avatar') as string,
+        cvLink: formData.get('cvLink') as string,
+        social: {
+          facebook: formData.get('facebook') as string,
+          twitter: formData.get('twitter') as string,
+          linkedin: formData.get('linkedin') as string,
+          github: formData.get('github') as string,
+        }
+      };
 
-  currentData.profile = newProfile;
-  const result = await updatePortfolioData(currentData);
+      console.log('Updating profile with data:', JSON.stringify(newProfile, null, 2));
+      currentData.profile = newProfile;
+      const result = await updatePortfolioData(currentData);
+      console.log('Update result:', result);
 
-  if (result.success) {
-    revalidatePath('/');
-    revalidatePath('/admin');
-    return { message: 'Profile updated successfully!', success: true };
-  } else {
-    return { message: `Failed to update profile: ${result.error}`, success: false };
+      if (result.success) {
+        revalidatePath('/');
+        revalidatePath('/admin');
+        return { message: 'Profile updated successfully!', success: true };
+      } else {
+        console.error('Update failed with error:', result.error);
+        return { message: `Failed to update profile: ${result.error}`, success: false };
+      }
+  } catch (e) {
+      console.error('Unexpected error in updateProfile:', e);
+      return { message: `Unexpected error: ${String(e)}`, success: false };
   }
 }
 

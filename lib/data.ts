@@ -83,7 +83,22 @@ export async function getPortfolioData(): Promise<PortfolioData> {
 
 export async function updatePortfolioData(newData: PortfolioData): Promise<{ success: boolean; error?: string }> {
   try {
-    await fs.writeFile(DATA_FILE, JSON.stringify(newData, null, 2), 'utf-8');
+    // Atomic write strategy: write to temp file then rename
+    // This avoids file locking issues and partial writes
+    const tempFile = `${DATA_FILE}.tmp-${Date.now()}`;
+    
+    await fs.writeFile(tempFile, JSON.stringify(newData, null, 2), 'utf-8');
+    
+    // Rename/move (atomic operation on POSIX, usually safe on Windows if target exists)
+    try {
+        await fs.rename(tempFile, DATA_FILE);
+    } catch (renameError) {
+        // Fallback for Windows if rename fails (sometimes due to permissions or locking)
+        // Copy and delete is less atomic but works
+        await fs.copyFile(tempFile, DATA_FILE);
+        await fs.unlink(tempFile);
+    }
+
     return { success: true };
   } catch (error) {
     console.error("Error writing data file:", error);
