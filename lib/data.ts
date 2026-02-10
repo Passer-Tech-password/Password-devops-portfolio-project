@@ -1,5 +1,6 @@
 import fs from 'fs/promises';
 import path from 'path';
+import { saveToGitHub } from './github-utils';
 
 const DATA_FILE = path.join(process.cwd(), 'data.json');
 
@@ -102,10 +103,23 @@ async function writeWithRetry(filePath: string, data: string, retries = 3, delay
 
 export async function updatePortfolioData(newData: PortfolioData): Promise<{ success: boolean; error?: string }> {
   try {
+    const dataString = JSON.stringify(newData, null, 2);
+
+    // If GITHUB_TOKEN is present, save to GitHub (Production/Vercel)
+    if (process.env.GITHUB_TOKEN) {
+      try {
+        await saveToGitHub('data.json', dataString, 'chore: update portfolio data via admin panel');
+        return { success: true };
+      } catch (githubError: any) {
+        console.error("GitHub save failed:", githubError);
+        return { success: false, error: `GitHub Save Failed: ${githubError.message}` };
+      }
+    }
+
+    // Local Development Fallback: File System
     // Atomic write strategy: write to temp file then rename
     // This avoids file locking issues and partial writes
     const tempFile = `${DATA_FILE}.tmp-${Date.now()}`;
-    const dataString = JSON.stringify(newData, null, 2);
     
     // Use retry logic for the initial write to temp file
     await writeWithRetry(tempFile, dataString);
