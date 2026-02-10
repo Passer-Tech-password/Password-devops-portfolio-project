@@ -98,7 +98,7 @@ export default function ProfileForm({ data }: { data: PortfolioData['profile'] }
       )}
 
       <button type="submit" disabled={isPending} className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-xl transition-colors disabled:opacity-50">
-        {isPending ? 'Saving...' : 'Save Profile'}
+        {isPending ? 'Saving...' : 'Save Profile (v2)'}
       </button>
     </form>
   );
