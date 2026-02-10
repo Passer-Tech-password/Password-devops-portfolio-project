@@ -15,10 +15,58 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-export const metadata: Metadata = {
-  title: "Clement Simeon Portfolio",
-  description: "Portfolio of Clement Simeon",
-};
+export async function generateMetadata(): Promise<Metadata> {
+  const data = await getPortfolioData();
+  const { profile } = data;
+  
+  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://password-devops-portfolio-project.vercel.app';
+
+  return {
+    metadataBase: new URL(baseUrl),
+    title: {
+      default: `${profile.name} - ${profile.role}`,
+      template: `%s | ${profile.name}`
+    },
+    description: `Portfolio of ${profile.name}, a ${profile.role} based in ${profile.location}.`,
+    keywords: [profile.name, profile.role, "Portfolio", "DevOps", "Developer", "Software Engineer", "Web Development"],
+    authors: [{ name: profile.name }],
+    creator: profile.name,
+    openGraph: {
+      type: "website",
+      locale: "en_US",
+      url: baseUrl,
+      title: `${profile.name} - ${profile.role}`,
+      description: `Check out the portfolio of ${profile.name}, a ${profile.role}.`,
+      siteName: `${profile.name} Portfolio`,
+      images: [
+        {
+          url: profile.avatar || '/og-image.jpg', // Fallback to a default OG image if avatar is missing
+          width: 1200,
+          height: 630,
+          alt: `${profile.name} Portfolio`,
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: `${profile.name} - ${profile.role}`,
+      description: `Portfolio of ${profile.name}, a ${profile.role}.`,
+      images: [profile.avatar || '/og-image.jpg'],
+      creator: "@" + (profile.social.twitter.split('/').pop() || ""),
+    },
+    robots: {
+      index: true,
+      follow: true,
+      googleBot: {
+        index: true,
+        follow: true,
+        'max-video-preview': -1,
+        'max-image-preview': 'large',
+        'max-snippet': -1,
+      },
+    },
+  };
+}
 
 export default async function RootLayout({
   children,
@@ -26,12 +74,37 @@ export default async function RootLayout({
   children: React.ReactNode;
 }>) {
   const data = await getPortfolioData();
+  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://password-devops-portfolio-project.vercel.app';
+
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'Person',
+    name: data.profile.name,
+    url: baseUrl,
+    image: data.profile.avatar,
+    sameAs: [
+      data.profile.social.facebook,
+      data.profile.social.twitter,
+      data.profile.social.linkedin,
+      data.profile.social.github,
+    ].filter(Boolean),
+    jobTitle: data.profile.role,
+    description: `Portfolio of ${data.profile.name}, a ${data.profile.role} based in ${data.profile.location}.`,
+    address: {
+      '@type': 'PostalAddress',
+      addressLocality: data.profile.location
+    }
+  };
 
   return (
     <html lang="en">
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-[#111111] text-white flex justify-center min-h-screen p-4 md:p-8 font-sans`}
       >
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
         <div className="w-full max-w-7xl flex flex-col lg:flex-row gap-6">
             <Sidebar />
             <div className="flex-1 flex flex-col min-w-0">
