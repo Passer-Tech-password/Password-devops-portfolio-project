@@ -73,7 +73,7 @@ export async function getPortfolioData(): Promise<PortfolioData> {
     // Return default empty structure if file read fails
     return {
       profile: { name: "", role: "", email: "", location: "", avatar: "", cvLink: "", social: { facebook: "", twitter: "", linkedin: "", github: "" } },
-      resume: { experience: [], education: [], skills: [] },
+      resume: { experience: [], education: [], nonformalEducation: [], skills: [] },
       projects: [],
       certifications: [],
       blog: []

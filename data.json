@@ -1,62 +1,155 @@
 {
   "profile": {
-    "name": "Clement Simeon",
+    "name": "Eng. Clement Simeon Password",
     "role": "DevOps | SRE | Cloud Engineer",
-    "email": "clement@example.com",
-    "location": "Lagos, Nigeria",
-    "avatar": "/avatar.png",
+    "email": "passertech@gmail.com",
+    "location": "Awka, Anambra, Nigeria",
+    "avatar": "/uploads/835d04d2-4ffa-4087-9add-291f44a26ac1-passwordimage.jpg",
     "cvLink": "#",
     "social": {
-      "facebook": "#",
-      "twitter": "#",
-      "linkedin": "#",
-      "github": "#"
+      "facebook": "https://www.facebook.com/PasserTech",
+      "twitter": "https://x.com/ClementSimeon15",
+      "linkedin": "www.linkedin.com/in/clement-simeon-c-5ab803363",
+      "github": "https://github.com/Passer-Tech-password"
     }
   },
   "resume": {
     "experience": [
       {
         "id": "1",
-        "role": "DevOps Engineer",
-        "company": "Tech Solutions",
-        "period": "2022 — Present",
-        "description": "Managed cloud infrastructure on AWS, implemented CI/CD pipelines using Jenkins, and automated deployment processes with Terraform and Ansible."
+        "role": "Senior DevOps Engineer",
+        "company": "Gramedia",
+        "period": "May 2024 - Present",
+        "description": "Enhanced system availability and performance by developing a Static Management System utilizing Cache and CDN, resulting in improved user experience. Increased availability and performance while optimizing costs by 10% by implementing a Proxy Image Processing and Transformation system with Cache and CDN. Modernized and optimized infrastructure through the implementation of a three-layer architecture, significantly improving system efficiency. Implemented Infrastructure as Code using Terraform, streamlining deployment processes and ensuring consistent infrastructure management. Transitioned from traditional infrastructure to containerized solutions using Kubernetes, enhancing scalability and operational efficiency. Developed a centralized dashboard monitoring solution with Grafana and Prometheus, accelerating the incident tracking process and improving response times. Simplified backup strategies by utilizing logs, ensuring efficient data management and recovery processes. Led multi-cloud migration initiative, transitioning applications from Alibaba Cloud and GCP to AWS, improving reliability, reducing operational complexity, and enabling a unified cloud strategy. Strengthened platform security by implementing rate-limiting rules, significantly reducing abusive traffic and improving overall system robustness. Built an observability platform, centralizing logs and traces by migrating from CloudWatch to a self-managed Elastic Stack, improving troubleshooting speed and visibility across systems. Established AWS Landing Zone with governance guardrails, identity baselines, and centralized security controls to support scalable and compliant cloud adoption. Authored cloud security and governance policy documentation to align engineering operations with compliance, risk management, and internal standards. Reduced infrastructure cost and improved application performance by migrating workloads to AWS Graviton architecture. Introduced endpoint-driven schedulers to replace legacy cron-based jobs, improving reliability, traceability, and consistency across environments. Implemented container, secret, and Kubernetes vulnerability scanning as part of CI/CD workflows, increasing deployment confidence and platform security posture."
       },
       {
         "id": "2",
-        "role": "Cloud Support Engineer",
-        "company": "Cloud Corp",
-        "period": "2020 — 2022",
-        "description": "Provided technical support for Google Cloud Platform services, troubleshooting issues related to Compute Engine, Kubernetes Engine, and networking."
+        "role": "Site Reliability Engineer (SRE)",
+        "company": "Lion Parcel",
+        "period": "Jan 2021 - May 2024",
+        "description": "Provide technical support and assistance to developers, addressing their problems and needs, ensuring smooth development processes. Utilize Jira for project management and issue tracking, ensuring efficient collaboration and task management. Develop and maintain an automated CI/CD pipeline using Jenkins, enabling seamless code deployment for every release. Create and maintain deployment processes for mobile apps on Android and iOS platforms, ensuring efficient and reliable distribution. Provision infrastructure, servers, and services using Terraform, enabling scalable and consistent deployment and management. Set up and monitoring, tracing, and logging tools such as ELK, Grafana, and Datadog, ensuring comprehensive visibility into system performance and issues. Implement monitoring alerts for services, databases, and logs, reducing the occurrence of errors in production environments. Manage and monitor a Kubernetes-based container cluster, ensuring high availability with a 99.9% uptime. Actively manage, improve, and monitor cloud infrastructure services on AWS and GCP, including backups, patches, and scaling. Administer GitHub repositories and permissions, including branching and tagging, ensuring efficient version control and collaboration. Develop and maintain scripts to automate tasks, improving efficiency and reducing manual effort. Integrate automation testing into the CI/CD pipeline, ensuring the quality and reliability of software releases. Scale Jenkins agents in Kubernetes to increase the number of executors, optimizing build and deployment processes for Go and Node.js projects. Implement a single dashboard monitoring solution using Prometheus, Thanos, and Grafana, providing a centralized view of system metrics. Successfully involved in the migration from GCP to AWS, minimizing downtime and ensuring a smooth transition. Import existing infrastructure to Terraform and implementing GitOps for managing and automating IaC."
+      },
+      {
+        "id": "3",
+        "role": "DevOps / Cloud Engineer",
+        "company": "RuangDisini",
+        "period": "May 2022 - Nov 2022",
+        "description": "Provisioned and managed infrastructure using Terraform and Ansible, ensuring efficient and reliable deployment of resources. Created CI/CD automation for code deployment using GitHub Actions, streamlining the development and release process. Implemented container management and monitoring using Portainer, enhancing visibility and control over containerized applications. Integrated various tools and systems, improving collaboration and efficiency across the development and operations teams. Conducted troubleshooting and root cause analysis, swiftly identifying and resolving issues to minimize downtime and optimize system performance. Maintained clear and concise documentation of infrastructure configurations and processes, facilitating ease of understanding and knowledge transfer."
+      },
+      {
+        "id": "4",
+        "role": "Full-stack Developer",
+        "company": "Transletin",
+        "period": "May 2020 - Jun 2021",
+        "description": "Web-based application development using Laravel to help the translation service business process. Redesign website interface with custom Content Management System."
+      },
+      {
+        "id": "5",
+        "role": "Practicum Assistant",
+        "company": "Laboratory Learning FILKOM UB",
+        "period": "Sep 2017 - May 2019",
+        "description": "Coordinate with lecturers and laboratory staff regarding the details of the Computer Network course. Helping to organize practical classroom teaching effectively."
+      },
+      {
+        "id": "6",
+        "role": "Network Engineer Intern",
+        "company": "NOC FIA UB",
+        "period": "Jul 2019 - Sep 2019",
+        "description": "Working on project to design network with a high level availability based on Mikrotik."
       }
     ],
     "education": [
       {
         "id": "1",
-        "degree": "Bachelor of Science in Computer Science",
-        "school": "University of Technology",
-        "period": "2016 — 2020",
-        "description": "Graduated with honors."
+        "degree": "Informatics Engineering focused on Network-Based Computing",
+        "school": "University of Brawijaya",
+        "period": "Sep 2015 - Feb 2020",
+        "description": "Malang, Indonesia"
       },
       {
         "id": "2",
-        "degree": "AWS Certified Cloud Practitioner",
-        "school": "Certification",
-        "period": "2021",
-        "description": "AWS Certified Cloud Practitioner & Google Cloud Associate Cloud Engineer."
+        "degree": "Majored in Science",
+        "school": "SMA Negeri 1 Banjarbaru",
+        "period": "Aug 2012 - Jun 2015",
+        "description": "Banjarbaru, Indonesia"
+      },
+      {
+        "id": "3",
+        "degree": "",
+        "school": "SMP Negeri 1 Kuranji",
+        "period": "Jul 2009 - Jun 2012",
+        "description": "Tanah Bumbu, Indonesia"
+      }
+    ],
+    "nonformalEducation": [
+      {
+        "id": "1",
+        "program": "Architecting on AWS (Membangun Arsitektur Cloud di AWS) | Cloud and Back-End Developer Scholarship Program",
+        "organization": "Dicoding - AWS",
+        "period": "Jul 2021 - Jul 2021 (40 Hours)",
+        "description": "Online",
+        "location": "Online"
+      },
+      {
+        "id": "2",
+        "program": "DevOps Praktis dengan IBM Cloud (Practical DevOps with IBM Cloud)",
+        "organization": "Dicoding - IBM",
+        "period": "May 2021 - May 2021 (35 Hours)",
+        "description": "Online",
+        "location": "Online"
+      },
+      {
+        "id": "3",
+        "program": "Cloud Practitioner Essentials (Belajar Dasar AWS Cloud) | Knowledge refresher on the basics of AWS",
+        "organization": "Dicoding - AWS",
+        "period": "Mar 2021 - Mar 2021 (13 Hours)",
+        "description": "Online",
+        "location": "Online"
+      },
+      {
+        "id": "4",
+        "program": "CCNA Cybersecurity Operations",
+        "organization": "Digitalent Scholarship 2020 by Kominfo",
+        "period": "May 2020 - Jul 2020 (189 Hours)",
+        "description": "Online",
+        "location": "Online"
+      },
+      {
+        "id": "5",
+        "program": "Belajar Dasar-Dasar Azure Cloud | Preparation for AZ-900 certification",
+        "organization": "Dicoding - Azure",
+        "period": "Feb 2020 - Feb 2020 (40 Hours)",
+        "description": "Online",
+        "location": "Online"
+      },
+      {
+        "id": "6",
+        "program": "AWS Cloud Computing Training",
+        "organization": "Digitalent Scholarship 2019 by Kominfo",
+        "period": "Jul 2019 - Aug 2019 (144 Hours)",
+        "description": "Malang, Indonesia",
+        "location": "Malang, Indonesia"
       }
     ],
     "skills": [
-      {
-        "id": "1",
-        "name": "DevOps (Jenkins, Docker, K8s)",
-        "level": 90
-      },
-      {
-        "id": "2",
-        "name": "Cloud (AWS, GCP)",
-        "level": 85
-      }
+      { "id": "1", "name": "Google Cloud Platform", "level": 75, "category": "Skills", "proficiency": "Intermediate" },
+      { "id": "2", "name": "Amazon Web Service", "level": 75, "category": "Skills", "proficiency": "Intermediate" },
+      { "id": "3", "name": "Linux Environment", "level": 75, "category": "Skills", "proficiency": "Intermediate" },
+      { "id": "4", "name": "Network Administrator", "level": 75, "category": "Skills", "proficiency": "Intermediate" },
+      { "id": "5", "name": "Infrastructure as Code", "level": 75, "category": "Skills", "proficiency": "Intermediate" },
+      { "id": "6", "name": "Automation and scripting", "level": 75, "category": "Skills", "proficiency": "Intermediate" },
+      { "id": "7", "name": "CI/CD", "level": 75, "category": "Skills", "proficiency": "Intermediate" },
+      { "id": "8", "name": "Git", "level": 75, "category": "Skills", "proficiency": "Intermediate" },
+      { "id": "9", "name": "Docker", "level": 75, "category": "Code Skills", "proficiency": "Intermediate" },
+      { "id": "10", "name": "Kubernetes", "level": 75, "category": "Code Skills", "proficiency": "Intermediate" },
+      { "id": "11", "name": "Jenkins", "level": 75, "category": "Code Skills", "proficiency": "Intermediate" },
+      { "id": "12", "name": "Terraform", "level": 75, "category": "Code Skills", "proficiency": "Intermediate" },
+      { "id": "13", "name": "Helm charts", "level": 75, "category": "Code Skills", "proficiency": "Intermediate" },
+      { "id": "14", "name": "Kong API Gateway", "level": 75, "category": "Code Skills", "proficiency": "Intermediate" },
+      { "id": "15", "name": "Nginx", "level": 75, "category": "Code Skills", "proficiency": "Intermediate" },
+      { "id": "16", "name": "Prometheus", "level": 75, "category": "Code Skills", "proficiency": "Intermediate" },
+      { "id": "17", "name": "Grafana", "level": 75, "category": "Code Skills", "proficiency": "Intermediate" },
+      { "id": "18", "name": "Elastic Stack", "level": 75, "category": "Code Skills", "proficiency": "Intermediate" }
     ]
   },
   "projects": [
