@@ -34,10 +34,20 @@ export interface PortfolioData {
       period: string;
       description: string;
     }>;
+    nonformalEducation: Array<{
+      id: string;
+      program: string;
+      organization: string;
+      period: string;
+      description: string;
+      location: string;
+    }>;
     skills: Array<{
       id: string;
       name: string;
       level: number;
+      category?: string;
+      proficiency?: string;
     }>;
   };
   projects: Array<{
