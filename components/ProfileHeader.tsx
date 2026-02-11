@@ -83,6 +83,11 @@ export default function ProfileHeader({ profile }: { profile: PortfolioData['pro
                    <WhatsAppIcon size={20} />
                  </a>
                )}
+               {profile.social.telegram && (
+                 <a href={profile.social.telegram} className="text-gray-400 hover:text-blue-400 transition-colors transform hover:scale-110" target="_blank" rel="noopener noreferrer">
+                   <TelegramIcon size={20} />
+                 </a>
+               )}
           </div>
         </div>
       </div>

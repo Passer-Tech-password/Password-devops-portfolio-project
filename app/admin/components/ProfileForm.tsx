@@ -102,6 +102,10 @@ export default function ProfileForm({ data }: { data: PortfolioData['profile'] }
                 <label className="text-sm text-gray-400">WhatsApp URL</label>
                 <input type="text" name="whatsapp" defaultValue={data.social.whatsapp} className="w-full bg-[#1e1e1f] border border-[#383838] rounded-xl px-4 py-2 text-white" />
             </div>
+            <div className="space-y-2">
+                <label className="text-sm text-gray-400">Telegram URL</label>
+                <input type="text" name="telegram" defaultValue={data.social.telegram} className="w-full bg-[#1e1e1f] border border-[#383838] rounded-xl px-4 py-2 text-white" />
+            </div>
         </div>
       </div>
 

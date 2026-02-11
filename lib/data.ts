@@ -20,6 +20,7 @@ export interface PortfolioData {
       tiktok?: string;
       youtube?: string;
       whatsapp?: string;
+      telegram?: string;
     };
   };
   resume: {
