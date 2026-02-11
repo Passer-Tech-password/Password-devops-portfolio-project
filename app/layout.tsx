@@ -100,16 +100,14 @@ export default async function RootLayout({
 
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-[#111111] text-white flex justify-center min-h-screen p-4 md:p-8 font-sans overflow-x-hidden selection:bg-blue-500/30`}
-      >
-        <GeometricBackground />
-        <InfinityBackground />
+      <body className={`${geistSans.variable} ${geistMono.variable} antialiased bg-[#121212] text-white min-h-screen relative selection:bg-blue-500/30 selection:text-blue-200`}>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
-        <div className="w-full max-w-7xl flex flex-col lg:flex-row gap-6">
+        <InfinityBackground />
+        <GeometricBackground />
+        <div className="container mx-auto px-4 py-8 lg:py-12 relative z-10">
           {/* Desktop Sidebar (Left) */}
           <Sidebar className="hidden lg:flex" />
           
