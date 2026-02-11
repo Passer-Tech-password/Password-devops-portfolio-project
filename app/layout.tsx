@@ -4,6 +4,7 @@ import "./globals.css";
 import Sidebar from "@/components/Sidebar";
 import ProfileHeader from "@/components/ProfileHeader";
 import { getPortfolioData } from "@/lib/data";
+import InfinityBackground from "@/components/InfinityBackground";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -101,6 +102,7 @@ export default async function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-[#111111] text-white flex justify-center min-h-screen p-4 md:p-8 font-sans`}
       >
+        <InfinityBackground />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
