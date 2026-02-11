@@ -90,6 +90,18 @@ export default function ProfileForm({ data }: { data: PortfolioData['profile'] }
                 <label className="text-sm text-gray-400">GitHub URL</label>
                 <input type="text" name="github" defaultValue={data.social.github} className="w-full bg-[#1e1e1f] border border-[#383838] rounded-xl px-4 py-2 text-white" />
             </div>
+            <div className="space-y-2">
+                <label className="text-sm text-gray-400">TikTok URL</label>
+                <input type="text" name="tiktok" defaultValue={data.social.tiktok} className="w-full bg-[#1e1e1f] border border-[#383838] rounded-xl px-4 py-2 text-white" />
+            </div>
+            <div className="space-y-2">
+                <label className="text-sm text-gray-400">YouTube URL</label>
+                <input type="text" name="youtube" defaultValue={data.social.youtube} className="w-full bg-[#1e1e1f] border border-[#383838] rounded-xl px-4 py-2 text-white" />
+            </div>
+            <div className="space-y-2">
+                <label className="text-sm text-gray-400">WhatsApp URL</label>
+                <input type="text" name="whatsapp" defaultValue={data.social.whatsapp} className="w-full bg-[#1e1e1f] border border-[#383838] rounded-xl px-4 py-2 text-white" />
+            </div>
         </div>
       </div>
 

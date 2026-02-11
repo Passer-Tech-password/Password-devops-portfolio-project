@@ -1,0 +1,164 @@
+warning: in the working copy of 'data.json', LF will be replaced by CRLF the next time Git touches it
+[1mdiff --git a/data.json b/data.json[m
+[1mindex 621641a..8c89400 100644[m
+[1m--- a/data.json[m
+[1m+++ b/data.json[m
+[36m@@ -1,6 +1,6 @@[m
+ {[m
+   "profile": {[m
+[31m-    "name": "Eng. Clement Simeon Password",[m
+[32m+[m[32m    "name": "Eng.  Password",[m
+     "role": "DevOps | SRE | Cloud Engineer",[m
+     "email": "passertech@gmail.com",[m
+     "location": "Awka, Anambra, Nigeria",[m
+[36m@@ -132,24 +132,132 @@[m
+       }[m
+     ],[m
+     "skills": [[m
+[31m-      { "id": "1", "name": "Google Cloud Platform", "level": 75, "category": "Skills", "proficiency": "Intermediate" },[m
+[31m-      { "id": "2", "name": "Amazon Web Service", "level": 75, "category": "Skills", "proficiency": "Intermediate" },[m
+[31m-      { "id": "3", "name": "Linux Environment", "level": 75, "category": "Skills", "proficiency": "Intermediate" },[m
+[31m-      { "id": "4", "name": "Network Administrator", "level": 75, "category": "Skills", "proficiency": "Intermediate" },[m
+[31m-      { "id": "5", "name": "Infrastructure as Code", "level": 75, "category": "Skills", "proficiency": "Intermediate" },[m
+[31m-      { "id": "6", "name": "Automation and scripting", "level": 75, "category": "Skills", "proficiency": "Intermediate" },[m
+[31m-      { "id": "7", "name": "CI/CD", "level": 75, "category": "Skills", "proficiency": "Intermediate" },[m
+[31m-      { "id": "8", "name": "Git", "level": 75, "category": "Skills", "proficiency": "Intermediate" },[m
+[31m-      { "id": "9", "name": "Docker", "level": 75, "category": "Code Skills", "proficiency": "Intermediate" },[m
+[31m-      { "id": "10", "name": "Kubernetes", "level": 75, "category": "Code Skills", "proficiency": "Intermediate" },[m
+[31m-      { "id": "11", "name": "Jenkins", "level": 75, "category": "Code Skills", "proficiency": "Intermediate" },[m
+[31m-      { "id": "12", "name": "Terraform", "level": 75, "category": "Code Skills", "proficiency": "Intermediate" },[m
+[31m-      { "id": "13", "name": "Helm charts", "level": 75, "category": "Code Skills", "proficiency": "Intermediate" },[m
+[31m-      { "id": "14", "name": "Kong API Gateway", "level": 75, "category": "Code Skills", "proficiency": "Intermediate" },[m
+[31m-      { "id": "15", "name": "Nginx", "level": 75, "category": "Code Skills", "proficiency": "Intermediate" },[m
+[31m-      { "id": "16", "name": "Prometheus", "level": 75, "category": "Code Skills", "proficiency": "Intermediate" },[m
+[31m-      { "id": "17", "name": "Grafana", "level": 75, "category": "Code Skills", "proficiency": "Intermediate" },[m
+[31m-      { "id": "18", "name": "Elastic Stack", "level": 75, "category": "Code Skills", "proficiency": "Intermediate" }[m
+[32m+[m[32m      {[m
+[32m+[m[32m        "id": "1",[m
+[32m+[m[32m        "name": "Google Cloud Platform",[m
+[32m+[m[32m        "level": 75,[m
+[32m+[m[32m        "category": "Skills",[m
+[32m+[m[32m        "proficiency": "Intermediate"[m
+[32m+[m[32m      },[m
+[32m+[m[32m      {[m
+[32m+[m[32m        "id": "2",[m
+[32m+[m[32m        "name": "Amazon Web Service",[m
+[32m+[m[32m        "level": 75,[m
+[32m+[m[32m        "category": "Skills",[m
+[32m+[m[32m        "proficiency": "Intermediate"[m
+[32m+[m[32m      },[m
+[32m+[m[32m      {[m
+[32m+[m[32m        "id": "3",[m
+[32m+[m[32m        "name": "Linux Environment",[m
+[32m+[m[32m        "level": 75,[m
+[32m+[m[32m        "category": "Skills",[m
+[32m+[m[32m        "proficiency": "Intermediate"[m
+[32m+[m[32m      },[m
+[32m+[m[32m      {[m
+[32m+[m[32m        "id": "4",[m
+[32m+[m[32m        "name": "Network Administrator",[m
+[32m+[m[32m        "level": 75,[m
+[32m+[m[32m        "category": "Skills",[m
+[32m+[m[32m        "proficiency": "Intermediate"[m
+[32m+[m[32m      },[m
+[32m+[m[32m      {[m
+[32m+[m[32m        "id": "5",[m
+[32m+[m[32m        "name": "Infrastructure as Code",[m
+[32m+[m[32m        "level": 75,[m
+[32m+[m[32m        "category": "Skills",[m
+[32m+[m[32m        "proficiency": "Intermediate"[m
+[32m+[m[32m      },[m
+[32m+[m[32m      {[m
+[32m+[m[32m        "id": "6",[m
+[32m+[m[32m        "name": "Automation and scripting",[m
+[32m+[m[32m        "level": 75,[m
+[32m+[m[32m        "category": "Skills",[m
+[32m+[m[32m        "proficiency": "Intermediate"[m
+[32m+[m[32m      },[m
+[32m+[m[32m      {[m
+[32m+[m[32m        "id": "7",[m
+[32m+[m[32m        "name": "CI/CD",[m
+[32m+[m[32m        "level": 75,[m
+[32m+[m[32m        "category": "Skills",[m
+[32m+[m[32m        "proficiency": "Intermediate"[m
+[32m+[m[32m      },[m
+[32m+[m[32m      {[m
+[32m+[m[32m        "id": "8",[m
+[32m+[m[32m        "name": "Git",[m
+[32m+[m[32m        "level": 75,[m
+[32m+[m[32m        "category": "Skills",[m
+[32m+[m[32m        "proficiency": "Intermediate"[m
+[32m+[m[32m      },[m
+[32m+[m[32m      {[m
+[32m+[m[32m        "id": "9",[m
+[32m+[m[32m        "name": "Docker",[m
+[32m+[m[32m        "level": 75,[m
+[32m+[m[32m        "category": "Code Skills",[m
+[32m+[m[32m        "proficiency": "Intermediate"[m
+[32m+[m[32m      },[m
+[32m+[m[32m      {[m
+[32m+[m[32m        "id": "10",[m
+[32m+[m[32m        "name": "Kubernetes",[m
+[32m+[m[32m        "level": 75,[m
+[32m+[m[32m        "category": "Code Skills",[m
+[32m+[m[32m        "proficiency": "Intermediate"[m
+[32m+[m[32m      },[m
+[32m+[m[32m      {[m
+[32m+[m[32m        "id": "11",[m
+[32m+[m[32m        "name": "Jenkins",[m
+[32m+[m[32m        "level": 75,[m
+[32m+[m[32m        "category": "Code Skills",[m
+[32m+[m[32m        "proficiency": "Intermediate"[m
+[32m+[m[32m      },[m
+[32m+[m[32m      {[m
+[32m+[m[32m        "id": "12",[m
+[32m+[m[32m        "name": "Terraform",[m
+[32m+[m[32m        "level": 75,[m
+[32m+[m[32m        "category": "Code Skills",[m
+[32m+[m[32m        "proficiency": "Intermediate"[m
+[32m+[m[32m      },[m
+[32m+[m[32m      {[m
+[32m+[m[32m        "id": "13",[m
+[32m+[m[32m        "name": "Helm charts",[m
+[32m+[m[32m        "level": 75,[m
+[32m+[m[32m        "category": "Code Skills",[m
+[32m+[m[32m        "proficiency": "Intermediate"[m
+[32m+[m[32m      },[m
+[32m+[m[32m      {[m
+[32m+[m[32m        "id": "14",[m
+[32m+[m[32m        "name": "Kong API Gateway",[m
+[32m+[m[32m        "level": 75,[m
+[32m+[m[32m        "category": "Code Skills",[m
+[32m+[m[32m        "proficiency": "Intermediate"[m
+[32m+[m[32m      },[m
+[32m+[m[32m      {[m
+[32m+[m[32m        "id": "15",[m
+[32m+[m[32m        "name": "Nginx",[m
+[32m+[m[32m        "level": 75,[m
+[32m+[m[32m        "category": "Code Skills",[m
+[32m+[m[32m        "proficiency": "Intermediate"[m
+[32m+[m[32m      },[m
+[32m+[m[32m      {[m
+[32m+[m[32m        "id": "16",[m
+[32m+[m[32m        "name": "Prometheus",[m
+[32m+[m[32m        "level": 75,[m
+[32m+[m[32m        "category": "Code Skills",[m
+[32m+[m[32m        "proficiency": "Intermediate"[m
+[32m+[m[32m      },[m
+[32m+[m[32m      {[m
+[32m+[m[32m        "id": "17",[m
+[32m+[m[32m        "name": "Grafana",[m
+[32m+[m[32m        "level": 75,[m
+[32m+[m[32m        "category": "Code Skills",[m
+[32m+[m[32m        "proficiency": "Intermediate"[m
+[32m+[m[32m      },[m
+[32m+[m[32m      {[m
+[32m+[m[32m        "id": "18",[m
+[32m+[m[32m        "name": "Elastic Stack",[m
+[32m+[m[32m        "level": 75,[m
+[32m+[m[32m        "category": "Code Skills",[m
+[32m+[m[32m        "proficiency": "Intermediate"[m
+[32m+[m[32m      }[m
+     ][m
+   },[m
+   "projects": [[m

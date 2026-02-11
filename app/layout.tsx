@@ -5,6 +5,7 @@ import Sidebar from "@/components/Sidebar";
 import ProfileHeader from "@/components/ProfileHeader";
 import { getPortfolioData } from "@/lib/data";
 import InfinityBackground from "@/components/InfinityBackground";
+import GeometricBackground from "@/components/GeometricBackground";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -100,21 +101,28 @@ export default async function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-[#111111] text-white flex justify-center min-h-screen p-4 md:p-8 font-sans`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-[#111111] text-white flex justify-center min-h-screen p-4 md:p-8 font-sans overflow-x-hidden selection:bg-blue-500/30`}
       >
+        <GeometricBackground />
         <InfinityBackground />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
         <div className="w-full max-w-7xl flex flex-col lg:flex-row gap-6">
-            <Sidebar />
-            <div className="flex-1 flex flex-col min-w-0">
-                <ProfileHeader profile={data.profile} />
-                <main className="bg-[#1e1e1f] border border-[#383838] rounded-3xl p-6 md:p-8 relative shadow-lg min-h-[500px]">
-                    {children}
-                </main>
-            </div>
+          {/* Desktop Sidebar (Left) */}
+          <Sidebar className="hidden lg:flex" />
+          
+          <div className="flex-1 flex flex-col min-w-0">
+            <ProfileHeader profile={data.profile} />
+            
+            {/* Tablet/Mobile Sidebar (Below Header) */}
+            <Sidebar className="lg:hidden mb-8" />
+
+            <main className="animate-in fade-in slide-in-from-bottom-8 duration-700 delay-200 bg-[#1e1e1f] border border-[#383838] rounded-3xl p-6 md:p-8 relative shadow-lg min-h-[500px]">
+              {children}
+            </main>
+          </div>
         </div>
       </body>
     </html>

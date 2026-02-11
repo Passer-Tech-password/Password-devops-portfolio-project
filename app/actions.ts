@@ -39,6 +39,9 @@ export async function updateProfile(prevState: any, formData: FormData) {
           twitter: formData.get('twitter') as string,
           linkedin: formData.get('linkedin') as string,
           github: formData.get('github') as string,
+          tiktok: formData.get('tiktok') as string,
+          youtube: formData.get('youtube') as string,
+          whatsapp: formData.get('whatsapp') as string,
         }
       };
 

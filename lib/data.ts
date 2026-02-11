@@ -17,6 +17,9 @@ export interface PortfolioData {
       twitter: string;
       linkedin: string;
       github: string;
+      tiktok?: string;
+      youtube?: string;
+      whatsapp?: string;
     };
   };
   resume: {
