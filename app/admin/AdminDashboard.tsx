@@ -12,6 +12,9 @@ export default function AdminDashboard({ data }: { data: PortfolioData }) {
 
   return (
     <div className="min-h-screen bg-[#1e1e1f] text-white font-sans">
+      <div className="bg-blue-900/50 border-b border-blue-800 px-4 py-2 text-center text-sm text-blue-200">
+        ℹ️ <strong>Note:</strong> Changes saved here are committed to GitHub. Please allow 1-2 minutes for Vercel to rebuild and deploy your changes to the live site.
+      </div>
       <nav className="bg-[#2b2b2c] border-b border-[#383838] sticky top-0 z-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between h-16 items-center">

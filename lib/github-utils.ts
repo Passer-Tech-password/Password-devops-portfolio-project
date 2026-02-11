@@ -58,3 +58,30 @@ export async function saveToGitHub(path: string, content: string | Buffer, messa
 
   return await response.json();
 }
+
+export async function fetchFromGitHub(path: string) {
+  if (!GITHUB_TOKEN) {
+    return null;
+  }
+
+  const url = `https://api.github.com/repos/${REPO_OWNER}/${REPO_NAME}/contents/${path}?ref=${BRANCH}`;
+
+  try {
+    const response = await fetch(url, {
+      headers: {
+        Authorization: `Bearer ${GITHUB_TOKEN}`,
+        Accept: 'application/vnd.github.v3+json',
+      },
+      cache: 'no-store', // Always fetch fresh data
+    });
+
+    if (response.ok) {
+      const data = await response.json();
+      const content = Buffer.from(data.content, 'base64').toString('utf-8');
+      return JSON.parse(content);
+    }
+  } catch (error) {
+    console.error("Error fetching from GitHub:", error);
+  }
+  return null;
+}
