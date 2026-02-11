@@ -1,6 +1,6 @@
 {
   "profile": {
-    "name": "Eng. Clement Simeon Password",
+    "name": "Eng. Password",
     "role": "DevOps | SRE | Cloud Engineer",
     "email": "passertech@gmail.com",
     "location": "Awka, Anambra, Nigeria",
@@ -132,24 +132,132 @@
       }
     ],
     "skills": [
-      { "id": "1", "name": "Google Cloud Platform", "level": 75, "category": "Skills", "proficiency": "Intermediate" },
-      { "id": "2", "name": "Amazon Web Service", "level": 75, "category": "Skills", "proficiency": "Intermediate" },
-      { "id": "3", "name": "Linux Environment", "level": 75, "category": "Skills", "proficiency": "Intermediate" },
-      { "id": "4", "name": "Network Administrator", "level": 75, "category": "Skills", "proficiency": "Intermediate" },
-      { "id": "5", "name": "Infrastructure as Code", "level": 75, "category": "Skills", "proficiency": "Intermediate" },
-      { "id": "6", "name": "Automation and scripting", "level": 75, "category": "Skills", "proficiency": "Intermediate" },
-      { "id": "7", "name": "CI/CD", "level": 75, "category": "Skills", "proficiency": "Intermediate" },
-      { "id": "8", "name": "Git", "level": 75, "category": "Skills", "proficiency": "Intermediate" },
-      { "id": "9", "name": "Docker", "level": 75, "category": "Code Skills", "proficiency": "Intermediate" },
-      { "id": "10", "name": "Kubernetes", "level": 75, "category": "Code Skills", "proficiency": "Intermediate" },
-      { "id": "11", "name": "Jenkins", "level": 75, "category": "Code Skills", "proficiency": "Intermediate" },
-      { "id": "12", "name": "Terraform", "level": 75, "category": "Code Skills", "proficiency": "Intermediate" },
-      { "id": "13", "name": "Helm charts", "level": 75, "category": "Code Skills", "proficiency": "Intermediate" },
-      { "id": "14", "name": "Kong API Gateway", "level": 75, "category": "Code Skills", "proficiency": "Intermediate" },
-      { "id": "15", "name": "Nginx", "level": 75, "category": "Code Skills", "proficiency": "Intermediate" },
-      { "id": "16", "name": "Prometheus", "level": 75, "category": "Code Skills", "proficiency": "Intermediate" },
-      { "id": "17", "name": "Grafana", "level": 75, "category": "Code Skills", "proficiency": "Intermediate" },
-      { "id": "18", "name": "Elastic Stack", "level": 75, "category": "Code Skills", "proficiency": "Intermediate" }
+      {
+        "id": "1",
+        "name": "Google Cloud Platform",
+        "level": 75,
+        "category": "Skills",
+        "proficiency": "Intermediate"
+      },
+      {
+        "id": "2",
+        "name": "Amazon Web Service",
+        "level": 75,
+        "category": "Skills",
+        "proficiency": "Intermediate"
+      },
+      {
+        "id": "3",
+        "name": "Linux Environment",
+        "level": 75,
+        "category": "Skills",
+        "proficiency": "Intermediate"
+      },
+      {
+        "id": "4",
+        "name": "Network Administrator",
+        "level": 75,
+        "category": "Skills",
+        "proficiency": "Intermediate"
+      },
+      {
+        "id": "5",
+        "name": "Infrastructure as Code",
+        "level": 75,
+        "category": "Skills",
+        "proficiency": "Intermediate"
+      },
+      {
+        "id": "6",
+        "name": "Automation and scripting",
+        "level": 75,
+        "category": "Skills",
+        "proficiency": "Intermediate"
+      },
+      {
+        "id": "7",
+        "name": "CI/CD",
+        "level": 75,
+        "category": "Skills",
+        "proficiency": "Intermediate"
+      },
+      {
+        "id": "8",
+        "name": "Git",
+        "level": 75,
+        "category": "Skills",
+        "proficiency": "Intermediate"
+      },
+      {
+        "id": "9",
+        "name": "Docker",
+        "level": 75,
+        "category": "Code Skills",
+        "proficiency": "Intermediate"
+      },
+      {
+        "id": "10",
+        "name": "Kubernetes",
+        "level": 75,
+        "category": "Code Skills",
+        "proficiency": "Intermediate"
+      },
+      {
+        "id": "11",
+        "name": "Jenkins",
+        "level": 75,
+        "category": "Code Skills",
+        "proficiency": "Intermediate"
+      },
+      {
+        "id": "12",
+        "name": "Terraform",
+        "level": 75,
+        "category": "Code Skills",
+        "proficiency": "Intermediate"
+      },
+      {
+        "id": "13",
+        "name": "Helm charts",
+        "level": 75,
+        "category": "Code Skills",
+        "proficiency": "Intermediate"
+      },
+      {
+        "id": "14",
+        "name": "Kong API Gateway",
+        "level": 75,
+        "category": "Code Skills",
+        "proficiency": "Intermediate"
+      },
+      {
+        "id": "15",
+        "name": "Nginx",
+        "level": 75,
+        "category": "Code Skills",
+        "proficiency": "Intermediate"
+      },
+      {
+        "id": "16",
+        "name": "Prometheus",
+        "level": 75,
+        "category": "Code Skills",
+        "proficiency": "Intermediate"
+      },
+      {
+        "id": "17",
+        "name": "Grafana",
+        "level": 75,
+        "category": "Code Skills",
+        "proficiency": "Intermediate"
+      },
+      {
+        "id": "18",
+        "name": "Elastic Stack",
+        "level": 75,
+        "category": "Code Skills",
+        "proficiency": "Intermediate"
+      }
     ]
   },
   "projects": [
