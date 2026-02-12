@@ -79,9 +79,12 @@ export interface PortfolioData {
   }>;
 }
 
-export async function getPortfolioData(): Promise<PortfolioData> {
-  // 1. Try fetching from GitHub (Production/Vercel)
-  if (process.env.GITHUB_TOKEN) {
+export async function getPortfolioData(options: { fetchRemote?: boolean } = {}): Promise<PortfolioData> {
+  const { fetchRemote = false } = options;
+
+  // 1. Try fetching from GitHub (Only if explicitly requested and in Production with token)
+  // This avoids rate limits on public pages and allows local dev override
+  if (fetchRemote && process.env.NODE_ENV === 'production' && process.env.GITHUB_TOKEN) {
     try {
       const githubData = await fetchFromGitHub('data.json');
       if (githubData) {
@@ -92,7 +95,7 @@ export async function getPortfolioData(): Promise<PortfolioData> {
     }
   }
 
-  // 2. Fallback to local file system
+  // 2. Fallback to local file system (Build artifact or local file)
   try {
     const data = await fs.readFile(DATA_FILE, 'utf-8');
     return JSON.parse(data);
