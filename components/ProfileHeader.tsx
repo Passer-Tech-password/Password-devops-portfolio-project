@@ -28,6 +28,15 @@ export default function ProfileHeader({ profile }: { profile: PortfolioData['pro
       {/* Decorative Gradient Blob (Top Left) */}
       <div className="absolute top-[-50px] left-[-50px] w-40 h-40 bg-gradient-to-br from-blue-600 to-purple-600 rounded-full blur-[60px] opacity-30 pointer-events-none"></div>
 
+      {/* Status Indicator (Top Right) */}
+      <div className="absolute top-4 right-4 flex items-center gap-2 bg-[#2b2b2c]/80 backdrop-blur-sm px-3 py-1.5 rounded-full border border-[#383838] shadow-lg z-20">
+        <span className="relative flex h-2.5 w-2.5">
+          <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+          <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-green-500"></span>
+        </span>
+        <span className="text-xs font-medium text-gray-300">Available for Work</span>
+      </div>
+
       <div className="p-8 md:p-10 flex flex-col lg:flex-row gap-8 items-center lg:items-start relative z-10">
         {/* Avatar Section */}
         <div className="relative group">
