@@ -1,6 +1,6 @@
 import fs from 'fs/promises';
 import path from 'path';
-import { saveToGitHub } from './github-utils';
+import { saveToGitHub, fetchFromGitHub } from './github-utils';
 
 const DATA_FILE = path.join(process.cwd(), 'data.json');
 
@@ -80,6 +80,19 @@ export interface PortfolioData {
 }
 
 export async function getPortfolioData(): Promise<PortfolioData> {
+  // 1. Try fetching from GitHub (Production/Vercel)
+  if (process.env.GITHUB_TOKEN) {
+    try {
+      const githubData = await fetchFromGitHub('data.json');
+      if (githubData) {
+        return githubData;
+      }
+    } catch (error) {
+      console.warn("Failed to fetch from GitHub, falling back to local file:", error);
+    }
+  }
+
+  // 2. Fallback to local file system
   try {
     const data = await fs.readFile(DATA_FILE, 'utf-8');
     return JSON.parse(data);
